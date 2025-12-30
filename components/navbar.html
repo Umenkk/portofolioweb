@@ -1,0 +1,92 @@
+<!-- components/navbar.html -->
+
+<header
+  class="fixed top-0 inset-x-0 z-50 bg-[#e5e5e5]/95 backdrop-blur border-b border-slate-300">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 py-4">
+    <div class="flex items-center justify-between gap-4">
+      
+      <!-- Brand kiri (tanpa kotak) -->
+      <div class="flex items-center">
+        <div>
+          <p class="text-sm font-semibold text-slate-900">Muhammad Irfan</p>
+
+          <!-- Animated role -->
+          <div class="mt-0.5 h-4 overflow-hidden">
+            <span
+              id="nav-role-text"
+              class="block text-[11px] text-slate-500 leading-tight transform transition-all duration-300 ease-out">
+              Web Developer
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kanan: menu desktop + Let's chat + hamburger mobile -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Menu pill (desktop) -->
+        <nav class="hidden md:block">
+          <div
+            class="inline-flex items-center bg-white rounded-full border border-slate-200 px-1 py-1 shadow-[0_0_0_1px_rgba(255,255,255,0.5)]">
+            <a href="#hero"
+               class="px-4 py-1.5 text-xs sm:text-sm font-medium rounded-full bg-slate-900 text-white">
+              Home
+            </a>
+            <a href="#projects"
+               class="px-4 py-1.5 text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-full">
+              Work
+            </a>
+            <a href="#about"
+               class="px-4 py-1.5 text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-full">
+              About
+            </a>
+          </div>
+        </nav>
+
+        <!-- Tombol Let's chat: selalu terlihat -->
+        <a
+          href="#contact"
+          class="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs sm:text-sm font-medium text-[#ff5a3c] hover:bg-[#ff5a3c] hover:text-white transition">
+          Let&apos;s chat
+        </a>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          id="nav-toggle"
+          class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-300 bg-white hover:bg-slate-100 transition"
+          aria-label="Toggle navigation">
+          <svg id="nav-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="nav-icon-close" xmlns="http://www.w3.org/2000/svg"
+               class="h-4 w-4 hidden" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                  d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu: Home, Work, About -->
+    <div id="nav-mobile-menu" class="md:hidden hidden mt-3">
+      <nav
+        class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <a href="#hero"
+           class="block px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-100">
+          Home
+        </a>
+        <a href="#projects"
+           class="block px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">
+          Work
+        </a>
+        <a href="#about"
+           class="block px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">
+          About
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>

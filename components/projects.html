@@ -1,0 +1,130 @@
+<style>
+  /* Efek Bayangan/Kedalaman pada Kartu Proyek */
+  .project-card-shadow {
+    box-shadow: 
+      0 1px 3px 0 rgba(0, 0, 0, 0.05),
+      0 10px 15px -3px rgba(0, 0, 0, 0.05),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: rotateZ(-0.5deg);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+
+  /* Efek Hover: Sedikit naik, rotasi kembali normal, dan bayangan lebih kuat */
+  .project-card-shadow:hover {
+    transform: translateY(-4px) rotateZ(0deg);
+    box-shadow: 
+      0 15px 30px -10px rgba(0, 0, 0, 0.15),
+      0 20px 40px -15px rgba(0, 0, 0, 0.15);
+  }
+
+  .project-thumbnail {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+  }
+
+</style>
+
+
+<section id="projects">
+  
+  <div class="mb-14 max-w-xl">
+    <p class="text-[12px] font-medium tracking-[0.25em] uppercase text-[#ff5a3c] mb-2 fade-up-strong delay-1">
+      Work
+    </p>
+    <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight fade-up-strong delay-2">
+      A small selection of current projects in development.
+    </h2>
+    <p class="mt-4 text-slate-500 text-[0.95rem] fade-up-strong delay-3">
+      I'm passionately building these projects to demonstrate my skills in **precision, performance, and attention to detail**. Stay tuned for launch!
+    </p>
+  </div>
+
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+    <a href="#" target="_blank" class="block group">
+      <div class="bg-white rounded-xl overflow-hidden project-card-shadow">
+        
+        <img class="project-thumbnail group-hover:scale-[1.01] transition-transform duration-300" 
+             src="./assets/coming-soon.png" alt="Project Thumbnail: Coming Soon" />
+        
+        <div class="p-6 sm:p-8">
+          <p class="text-sm text-[#ff5a3c] font-medium mb-1">CONTRACT.COM (IN DEVELOPMENT)</p>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2 group-hover:text-slate-800 transition">
+            Full control over all contracts
+          </h3>
+          <p class="text-sm text-slate-500">
+            **Project Goal:** Designing and developing a comprehensive B2B contract management dashboard, focusing on robust data visualization and real-time approval workflows using **React** and **Node.js**.
+          </p>
+        </div>
+      </div>
+    </a>
+
+
+    <a href="#" target="_blank" class="block group">
+      <div class="bg-white rounded-xl overflow-hidden project-card-shadow">
+        
+        <img class="project-thumbnail group-hover:scale-[1.01] transition-transform duration-300" 
+             src="./assets/coming-soon.png" alt="Project Thumbnail: Coming Soon" />
+        
+        <div class="p-6 sm:p-8">
+          <p class="text-sm text-[#ff5a3c] font-medium mb-1">COMPUTECH (IN DEVELOPMENT)</p>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2 group-hover:text-slate-800 transition">
+            Innovative IT Lösungen für Unternehmen.
+          </h3>
+          <p class="text-sm text-slate-500">
+            **Project Goal:** Building a next-generation enterprise service portal. This project emphasizes modern frontend architecture built with **Next.js** for high performance and styled with **Tailwind CSS**.
+          </p>
+        </div>
+      </div>
+    </a>
+    
+    <a href="#" target="_blank" class="block group">
+      <div class="bg-white rounded-xl overflow-hidden project-card-shadow">
+        
+        <img class="project-thumbnail group-hover:scale-[1.01] transition-transform duration-300" 
+             src="./assets/coming-soon.png" alt="Project Thumbnail: Coming Soon" />
+        
+        <div class="p-6 sm:p-8">
+          <p class="text-sm text-[#ff5a3c] font-medium mb-1">MATE.COM (IN DEVELOPMENT)</p>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2 group-hover:text-slate-800 transition">
+            Break barriers, enable anyone
+          </h3>
+          <p class="text-sm text-slate-500">
+            **Project Goal:** Crafting responsive, dynamic landing pages and optimizing conversion funnels for a content creation platform. Focus is on speed and user experience (UX) across all mobile devices.
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" target="_blank" class="block group">
+      <div class="bg-white rounded-xl overflow-hidden project-card-shadow">
+        
+        <img class="project-thumbnail group-hover:scale-[1.01] transition-transform duration-300" 
+             src="./assets/coming-soon.png" alt="Project Thumbnail: Coming Soon" />
+        
+        <div class="p-6 sm:p-8">
+          <p class="text-sm text-[#ff5a3c] font-medium mb-1">LADELÖSUNG.COM (IN DEVELOPMENT)</p>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2 group-hover:text-slate-800 transition">
+            Innovative Lösungen für Ihr Projekt.
+          </h3>
+          <p class="text-sm text-slate-500">
+            **Project Goal:** Developing a secure and scalable portal for EV charging station management, including real-time monitoring and billing integration, powered by a **Full-Stack MERN** architecture.
+          </p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+  
+  <div class="text-center mt-16 fade-up-strong delay-4">
+    <button
+      class="inline-flex items-center rounded-lg bg-slate-200 px-6 py-2.5 text-sm font-semibold text-slate-700
+             shadow-sm hover:bg-slate-300 active:translate-y-[1px] transition">
+      Show more projects
+    </button>
+  </div>
+
+</section>

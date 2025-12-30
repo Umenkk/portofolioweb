@@ -1,0 +1,254 @@
+<style>
+    .geometric-deco {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%; /* Membuat bentuk lingkaran */
+    border: 1px solid rgba(255, 90, 60, 0.1); /* Border tipis warna aksen */
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: spin 30s linear infinite; /* Animasi putar lambat */
+    z-index: 0; /* Pastikan di belakang semua konten */
+    pointer-events: none; /* Non-interaktif */
+  }
+
+  /* Foto cut-corner kiri atas */
+  .hero-photo {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center 80%;
+    border-radius: 16px;
+
+    clip-path: polygon(
+      0% 12%,
+      15% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%
+    );
+
+    /* initial animation state */
+    opacity: 0;
+    transform: scale(1.06);
+    filter: blur(10px) grayscale(40%) brightness(1.04) contrast(0.92) sepia(0.12);
+    animation: heroImageIn 1s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes heroImageIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0px) grayscale(30%) brightness(1.04) contrast(0.92) sepia(0.10);
+    }
+  }
+
+  /* ===== TEKS FADE UP ===== */
+  .fade-up-strong {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.9s cubic-bezier(.16,.84,.44,1) forwards;
+  }
+
+  .delay-1 { animation-delay: 0.25s; }
+  .delay-2 { animation-delay: 0.40s; }
+  .delay-3 { animation-delay: 0.55s; }
+  .delay-4 { animation-delay: 0.70s; }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ===== CURSOR TYPING ===== */
+  .hero-cursor {
+    display: inline-block;
+    margin-left: 4px;
+    animation: blink 0.75s infinite;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  /* ===== TECH STACK CAROUSEL STYLES (NEW) ===== */
+
+  /* Container untuk carousel (untuk mask) */
+  .tech-stack-container {
+    /* overflow-hidden sudah ditambahkan di HTML via Tailwind */
+    mask: linear-gradient(
+      90deg,
+      transparent 0%,
+      white 5%,
+      white 95%,
+      transparent 100%
+    );
+  }
+
+  /* WRAPPER BARU: untuk menampung dua grup logo secara horizontal dan memulai animasi */
+  .logos-wrapper {
+    display: flex;
+    width: fit-content; /* Biarkan konten menentukan lebar */
+    animation: scroll 30s linear infinite; /* Kecepatan: 60 detik */
+  }
+
+  /* Baris logo (membutuhkan dua salinan untuk loop tak terbatas) */
+  .tech-stack-logos {
+    display: flex;
+    /* Gunakan gap yang sangat besar agar logo tersebar jauh dan tidak tumpang tindih. */
+    gap: 0.5rem; /* Jarak antar logo: 64px */ 
+    
+    /* Gunakan padding horizontal agar ada ruang di tepi luar */
+    padding: 0 4rem; 
+
+    /* Pastikan satu grup logo tidak menyusut (penting untuk animasi) */
+    flex-shrink: 0; 
+    
+    /* Atur lebar minimum agar grup logo terdistribusi dengan baik */
+    min-width: 100vw;
+    align-items: center;
+    justify-content: space-around; /* Menyebar logo secara merata */
+  }
+
+  /* Animasi scroll horizontal */
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    /* Pindahkan sejauh -100% dari lebar layar (Viewport Width) agar loop berjalan mulus */
+    to {
+      transform: translateX(-100vw);
+    }
+  }
+
+  /* Efek untuk setiap logo */
+  .tech-stack-logo {
+    display: block;
+    height: 36px;
+    object-fit: contain;
+    /* Sesuaikan filter agar hasilnya mirip gambar referensi */
+    transition: filter 0.3s, opacity 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .tech-stack-logo {
+      height: 24px; /* Tinggi yang lebih kecil untuk mobile */
+    }
+    
+    .tech-stack-logos {
+      gap: 3rem; /* Mengurangi jarak antar logo di mobile */
+    }
+    
+    /* Agar animasi tidak terlalu cepat di mobile, kita perlambat sedikit */
+    .logos-wrapper {
+       animation: scroll 60s linear infinite;
+    }
+  }
+
+  /* Efek hover (opsional) */
+  .tech-stack-logo:hover {
+    filter: grayscale(0%) brightness(1); 
+    opacity: 1;
+  }
+</style>
+
+
+<div>
+  
+  <div class="relative"> <div class="geometric-deco"></div>
+  
+  <section id="hero"
+    class="min-h-[75vh] flex flex-col md:flex-row items-start md:items-center gap-14 lg:gap-24 mb-16 relative">
+
+    <div class="w-full md:w-[48%] order-2 md:order-1">
+      <img
+        src="./assets/foto.png"
+        alt="Muhammad Irfan"
+        class="hero-photo 
+               w-full
+               max-h-[240px]
+               sm:max-h-[300px]
+               md:max-h-[420px]
+               lg:max-h-[520px]
+               xl:max-h-[600px]" />
+    </div>
+
+    <div class="w-full md:w-[52%] leading-tight order-1 md:order-2">
+
+      <p class="text-[12px] font-medium tracking-[0.25em] uppercase text-[#ff5a3c] mb-4 fade-up-strong delay-1">
+        Muhammad Irfan
+      </p>
+
+      <h1
+        class="font-semibold text-[#111827]
+               text-[2.7rem] sm:text-[3rem] md:text-[3.4rem] lg:text-[3.6rem]
+               tracking-[-0.01em] leading-[1.05] mb-6 fade-up-strong delay-2">
+
+        <span class="block">I’m a</span>
+        <span class="block">
+          <span id="hero-typing"></span>
+          <span class="hero-cursor">|</span>
+        </span>
+      </h1>
+
+      <p class="text-[0.95rem] sm:text-[1rem] text-slate-500 leading-relaxed max-w-[420px] mb-8 fade-up-strong delay-3">
+        I design and develop high-end web experiences for companies and teams that value precision,
+        performance, and attention to detail.
+      </p>
+
+      <button
+        onclick="document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });"
+        class="inline-flex items-center rounded-lg bg-[#ff5a3c] px-6 py-2.5 text-sm font-semibold text-white
+               shadow-sm hover:bg-[#ff734f] active:translate-y-[1px] transition fade-up-strong delay-4">
+        Contact me
+      </button>
+    </div>
+  </section>
+
+
+ <section class="py-10 -mt-20 sm:-mt-10 lg:-mt-20">
+  
+  <div class="text-center mb-10 fade-up-strong delay-5">
+    <p class="text-[12px] font-medium tracking-[0.2em] uppercase text-slate-500">
+      <span class="text-[#ff5a3c] mr-2">—</span> 
+      | Tech Stack |
+      <span class="text-[#ff5a3c] ml-2">—</span>
+    </p>
+  </div>
+  
+  <div class="overflow-hidden tech-stack-container">
+    
+    <div class="logos-wrapper"> 
+      
+      <div class="tech-stack-logos">
+        <img class="tech-stack-logo" src="./assets/logos/logo-html.png" alt="HTML5" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-css.png" alt="CSS3" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-js.png" alt="JavaScript" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-react.png" alt="React" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-nextjs.png" alt="Next.js" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-tailwind.png" alt="Tailwind CSS" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-node.png" alt="Node.js" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-mongodb.png" alt="MongoDB" />
+      </div>
+
+      <div class="tech-stack-logos" aria-hidden="true">
+        <img class="tech-stack-logo" src="./assets/logos/logo-html.png" alt="HTML5" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-css.png" alt="CSS3" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-js.png" alt="JavaScript" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-react.png" alt="React" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-nextjs.png" alt="Next.js" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-tailwind.png" alt="Tailwind CSS" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-node.png" alt="Node.js" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-mongodb.png" alt="MongoDB" />
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>

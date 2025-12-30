@@ -1,0 +1,169 @@
+<style>
+  /* Menggunakan kembali CSS Fade Up */
+  .fade-up-strong {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.9s cubic-bezier(.16,.84,.44,1) forwards;
+  }
+  .delay-1 { animation-delay: 0.25s; }
+  .delay-2 { animation-delay: 0.40s; }
+  .delay-3 { animation-delay: 0.55s; }
+  .delay-4 { animation-delay: 0.70s; }
+  .delay-5 { animation-delay: 0.85s; }
+  .delay-6 { animation-delay: 1.00s; }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Kustom: Styling untuk Kartu Kontak Gelap */
+  .contact-card {
+    background-color: #1a1a1a; /* Warna gelap untuk kontras */
+    color: #f3f4f6; /* Teks terang */
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-input, .contact-textarea, .contact-select {
+    width: 100%;
+    background-color: #262626; /* Background input lebih gelap */
+    border: 1px solid #4a4a4a;
+    color: #f3f4f6;
+    /* PERUBAHAN: Radius lebih halus (rounded-md) */
+    border-radius: 0.375rem; 
+    padding: 0.85rem 1rem; /* Padding sedikit dilebarkan */
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s; /* Tambah transisi shadow */
+  }
+  
+  /* PERBAIKAN FOKUS: Border warna aksen + shadow */
+  .contact-input:focus, .contact-textarea:focus, .contact-select:focus {
+    outline: none;
+    border-color: #ff5a3c; 
+    box-shadow: 0 0 0 2px rgba(255, 90, 60, 0.2); /* Shadow halus warna aksen */
+  }
+
+  /* Placeholder Styling (PERBAIKAN: Sedikit lebih terang) */
+  .contact-input::placeholder, .contact-textarea::placeholder, .contact-select option {
+    color: #b3b3b3; 
+  }
+
+  /* Kustom: Styling Kartu Kontak Gelap (untuk form) */
+  .contact-card {
+    background-color: #1a1a1a; 
+    color: #f3f4f6; 
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling Checkbox Agar Sesuai Tema Gelap */
+  .contact-checkbox {
+    width: 16px;
+    height: 16px;
+    background-color: #262626;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    appearance: none; /* Hapus tampilan default browser */
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  .contact-checkbox:checked {
+    background-color: #ff5a3c;
+    border-color: #ff5a3c;
+  }
+  .contact-checkbox:checked::after {
+    content: '✓'; /* Tanda centang kustom */
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    font-size: 14px;
+    color: white;
+  }
+</style>
+
+<section id="contact" class="flex flex-col lg:flex-row gap-10 lg:gap-16">
+
+  <div class="w-full lg:w-5/12 pt-4 pb-8 lg:pb-0">
+    <div class="max-w-md">
+      <p class="text-[12px] font-medium tracking-[0.25em] uppercase text-[#ff5a3c] mb-2 fade-up-strong delay-1">
+        Contact
+      </p>
+      <h2 class="text-4xl sm:text-5xl font-semibold text-slate-900 leading-tight mb-8 fade-up-strong delay-2">
+        Want to work with me?<br>I'd love to hear from you!
+      </h2>
+
+      <div class="mt-12 text-slate-500 space-y-3 fade-up-strong delay-3">
+  <p class="text-sm">Local time:</p>
+  <div id="local-time-display" class="text-slate-900 font-semibold text-xl">
+    Loading...
+  </div>
+</div>
+      
+      <div class="mt-10 fade-up-strong delay-4">
+        <p class="text-sm text-slate-500 mb-2">Hate Contact forms?</p>
+        <a href="mailto:hello@irfan.dev" class="text-base text-slate-900 font-medium hover:text-[#ff5a3c] transition">
+          hello@irfan.dev
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full lg:w-7/12 contact-card p-8 sm:p-10 fade-up-strong delay-5">
+    <form action="#" method="POST" class="space-y-5">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <input type="text" name="name" placeholder="Name" required class="contact-input" />
+        <input type="email" name="email" placeholder="E-Mail" required class="contact-input" />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <select name="budget" class="contact-select">
+          <option value="">Budget Range in €</option>
+          <option>5 - 10.000 €</option>
+          <option>10 - 25.000 €</option>
+          <option>25.000 € +</option>
+        </select>
+        <select name="service" class="contact-select">
+          <option value="">Services</option>
+          <option>Design / Dev Consulting</option>
+          <option>Full-Stack Development</option>
+          <option>Frontend Development</option>
+        </select>
+      </div>
+
+      <div>
+        <textarea name="description" rows="5" placeholder="Project Description" class="contact-textarea"></textarea>
+      </div>
+
+      <div class="flex items-center space-x-2 pt-2">
+        <input type="checkbox" id="privacy-policy" name="privacy-policy" required class="contact-checkbox">
+        <label for="privacy-policy" class="text-sm text-slate-400">
+          By submitting this form, you agree to the <a href="#" class="text-[#ff5a3c] hover:underline">Privacy Policy</a>
+        </label>
+      </div>
+
+      <button type="submit"
+        class="inline-flex items-center rounded-lg bg-[#ff5a3c] px-6 py-2.5 text-sm font-semibold text-white
+               shadow-md hover:bg-[#ff734f] active:translate-y-[1px] transition">
+        Send
+      </button>
+    </form>
+  </div>
+
+</section>
+
+<div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 pt-16 pb-8 border-t border-slate-300/50 mt-16 text-xs text-slate-500">
+  <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+    <p>© 2025 Muhammad Irfan. Version 2.1</p>
+    <div class="flex space-x-4">
+      <a href="#" class="hover:text-[#ff5a3c] transition">Dribbble</a>
+      <a href="#" class="hover:text-[#ff5a3c] transition">LinkedIn</a>
+      <a href="#" class="hover:text-[#ff5a3c] transition">Twitter</a>
+      <a href="#" class="hover:text-[#ff5a3c] transition">Instagram</a>
+    </div>
+  </div>
+</div>

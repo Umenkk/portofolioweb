@@ -1,0 +1,123 @@
+<style>
+  /* Menggunakan kembali CSS Fade Up */
+  .fade-up-strong {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.9s cubic-bezier(.16,.84,.44,1) forwards;
+  }
+  .delay-1 { animation-delay: 0.25s; }
+  .delay-2 { animation-delay: 0.40s; }
+  .delay-3 { animation-delay: 0.55s; }
+  .delay-4 { animation-delay: 0.70s; }
+  .delay-5 { animation-delay: 0.85s; }
+  .delay-6 { animation-delay: 1.00s; }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Kustom: Styling Kartu Layanan */
+  .service-card {
+    position: relative;
+    border-radius: 1rem; /* rounded-xl */
+    border: 1px solid rgba(229, 231, 235, 0.7); /* border-slate-200 halus */
+    padding: 2.5rem; /* p-10 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Kustom: Efek Hover */
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Kustom: Styling Angka Transparan Besar */
+  .service-number {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 5rem; /* Ukuran besar */
+    font-weight: 600; /* semi-bold */
+    line-height: 1;
+    color: rgba(17, 24, 39, 0.08); /* Transparan gelap */
+    z-index: 0;
+  }
+</style>
+
+<section id="skills" class="space-y-12">
+  
+  <div class="max-w-4xl flex flex-col md:flex-row md:justify-between md:items-end">
+    
+    <div class="mb-6 md:mb-0">
+      <p class="text-[12px] font-medium tracking-[0.25em] uppercase text-[#ff5a3c] mb-2 fade-up-strong delay-1">
+        Services
+      </p>
+      <h2 class="text-4xl font-semibold text-slate-900 leading-tight fade-up-strong delay-2">
+        Think. Design.<br>Develop. Launch.
+      </h2>
+    </div>
+    
+    <div class="max-w-md">
+      <p class="mt-4 text-slate-500 text-[0.95rem] fade-up-strong delay-3">
+        My services cover the full lifecycle of a digital product, from initial concept analysis to robust full-stack development and ongoing performance support.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <div class="service-card bg-white fade-up-strong delay-4">
+      <span class="service-number" aria-hidden="true">01</span>
+      <div class="relative z-10 pt-10">
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+          Consulting
+        </h3>
+        <p class="text-sm text-slate-500">
+          For IT analysis, technical strategy, and defining scalable architecture.
+        </p>
+      </div>
+    </div>
+
+    <div class="service-card bg-white fade-up-strong delay-5">
+      <span class="service-number" aria-hidden="true">02</span>
+      <div class="relative z-10 pt-10">
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+          Design
+        </h3>
+        <p class="text-sm text-slate-500">
+          Crafting intuitive User Experience (UX) and pixel-perfect User Interface (UI) design mockups.
+        </p>
+      </div>
+    </div>
+
+    <div class="service-card bg-white fade-up-strong delay-6">
+      <span class="service-number" aria-hidden="true">03</span>
+      <div class="relative z-10 pt-10">
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+          Development
+        </h3>
+        <p class="text-sm text-slate-500">
+          Full-stack implementation focusing on performance (Next.js, Node.js, MERN stack).
+        </p>
+      </div>
+    </div>
+
+    <div class="service-card bg-white fade-up-strong delay-6">
+      <span class="service-number" aria-hidden="true">04</span>
+      <div class="relative z-10 pt-10">
+        <h3 class="text-xl font-semibold text-slate-900 mb-2">
+          Support
+        </h3>
+        <p class="text-sm text-slate-500">
+          Ongoing optimization, maintenance, and technical consultation post-launch.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>

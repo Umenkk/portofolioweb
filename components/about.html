@@ -1,0 +1,109 @@
+<style>
+  /* Tambahkan animasi fade-up dan delay CSS dari Hero Section */
+  .fade-up-strong {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.9s cubic-bezier(.16,.84,.44,1) forwards;
+  }
+  .delay-1 { animation-delay: 0.25s; }
+  .delay-2 { animation-delay: 0.40s; }
+  .delay-3 { animation-delay: 0.55s; }
+  .delay-4 { animation-delay: 0.70s; }
+  .delay-5 { animation-delay: 0.85s; }
+  .delay-6 { animation-delay: 1.00s; }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Kustom: Sudut foto yang lebih unik di About Section */
+  .about-photo-clip {
+    clip-path: polygon(
+      5% 0%, 
+      100% 0%, 
+      100% 90%, 
+      95% 100%, 
+      0% 100%, 
+      0% 10%
+    );
+  }
+</style>
+
+<section id="about"
+  class="flex flex-col md:flex-row items-start md:items-center gap-14 lg:gap-24">
+
+  <div class="w-full md:w-[55%] order-2 md:order-1 leading-tight">
+
+    <p class="text-[12px] font-medium tracking-[0.25em] uppercase text-[#ff5a3c] mb-2 fade-up-strong delay-1">
+      About Me
+    </p>
+
+    <h2
+      class="font-semibold text-[#111827]
+             text-3xl sm:text-4xl 
+             tracking-[-0.01em] leading-tight mb-6 fade-up-strong delay-2">
+      Designer and <span class="text-[#ff5a3c]">Full-Stack Enthusiast</span> who crafts experiences.
+    </h2>
+
+    <p class="text-[0.95rem] sm:text-[1rem] text-slate-500 leading-relaxed max-w-[500px] mb-8 fade-up-strong delay-3">
+      I’m a highly analytical web professional with a strong foundation in **IT Analysis** and a passion for crafting precise digital products. My background drives me to build solutions that aren't just functional, but also highly performant and enjoyable to use.
+    </p>
+
+    <div class="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 max-w-[450px]">
+      
+      <div class="flex items-center space-x-3 fade-up-strong delay-4">
+        <span class="text-[#ff5a3c] text-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.72 10.66l-3.32 3.32c-.19.19-.44.29-.7.29s-.51-.1-.7-.29l-1.59-1.59c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0l.89.89 2.62-2.62c.39-.39 1.02-.39 1.41 0 .39.39.39 1.03 0 1.42z"/>
+          </svg>
+        </span>
+        <p class="text-sm font-medium text-slate-700">IT Analysis & Strategy</p>
+      </div>
+
+      <div class="flex items-center space-x-3 fade-up-strong delay-4">
+        <span class="text-[#ff5a3c] text-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+        </span>
+        <p class="text-sm font-medium text-slate-700">Problem Solver Focus</p>
+      </div>
+      
+      <div class="flex items-center space-x-3 fade-up-strong delay-5">
+        <span class="text-[#ff5a3c] text-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L1 21h22L12 2zm-1 7h2v4h-2V9zm0 6h2v2h-2v-2z"/>
+          </svg>
+        </span>
+        <p class="text-sm font-medium text-slate-700">Frontend Performance</p>
+      </div>
+
+      <div class="flex items-center space-x-3 fade-up-strong delay-5">
+        <span class="text-[#ff5a3c] text-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8.47l8 5.03 8-5.03V18z"/>
+          </svg>
+        </span>
+        <p class="text-sm font-medium text-slate-700">Full-Stack Capability</p>
+      </div>
+
+    </div>
+
+    <a href="#contact"
+      class="inline-flex items-center mt-10 rounded-lg bg-[#ff5a3c] px-6 py-2.5 text-sm font-semibold text-white
+             shadow-sm hover:bg-[#ff734f] active:translate-y-[1px] transition fade-up-strong delay-6">
+      Download CV
+    </a>
+  </div>
+
+  <div class="w-full md:w-[45%] order-1 md:order-2">
+    <img
+      src="./assets/foto.png"
+      alt="Muhammad Irfan"
+      class="about-photo-clip w-full rounded-xl 
+             max-h-[360px] md:max-h-[500px] object-cover" />
+  </div>
+</section>
