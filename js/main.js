@@ -88,12 +88,12 @@ function initHero() {
   const heroTypingEl = document.getElementById('hero-typing');
   if (!heroTypingEl) return;
 
-  const words = [
-    'Web Developer',
-    'Interactive Web Developer',
-    'Frontend Experience Developer',
-    'Full-Stack Web Craftsman',
-  ];
+const words = [
+  'Web Developer',
+  'Frontend Developer',
+  'Fullstack Developer',
+  'UI Developer',
+];
 
   let wIndex = 0;
   let cIndex = 0;
