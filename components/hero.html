@@ -149,7 +149,11 @@
     .logos-wrapper {
        animation: scroll 60s linear infinite;
     }
+
+  .hero-typing {
+    font-size: 2.5rem;
   }
+}
 
   /* Efek hover (opsional) */
   .tech-stack-logo:hover {
@@ -166,7 +170,8 @@
   <section id="hero"
     class="min-h-[75vh] flex flex-col md:flex-row items-start md:items-center gap-14 lg:gap-24 mb-16 relative">
 
-    <div class="w-full md:w-[48%] order-2 md:order-1">
+ <div class="w-full md:w-[48%] order-2 md:order-1 hover-3d">
+  <figure>
       <img
         src="./assets/foto.png"
         alt="Muhammad Irfan"
@@ -177,6 +182,9 @@
                md:max-h-[420px]
                lg:max-h-[520px]
                xl:max-h-[600px]" />
+               </figure>
+               <div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div>
     </div>
 
     <div class="w-full md:w-[65%] leading-tight order-1 md:order-2">
@@ -192,7 +200,7 @@
 
         <span class="block">I’m a</span>
         <span class="block">
-          <span id="hero-typing"></span>
+          <span class="hero-typing" id="hero-typing"></span>
           <span class="hero-cursor">|</span>
         </span>
       </h1>
@@ -212,7 +220,7 @@
   </section>
 
 
- <section class="py-10 -mt-20 sm:-mt-10 lg:-mt-20">
+ <section class="py-5 -mt-20 sm:-mt-10 lg:-mt-20">
   
   <div class="text-center mb-10 fade-up-strong delay-5">
     <p class="text-[12px] font-medium tracking-[0.2em] uppercase text-slate-500">
@@ -231,9 +239,7 @@
         <img class="tech-stack-logo" src="./assets/logos/logo-css.png" alt="CSS3" />
         <img class="tech-stack-logo" src="./assets/logos/logo-js.png" alt="JavaScript" />
         <img class="tech-stack-logo" src="./assets/logos/logo-react.png" alt="React" />
-        <img class="tech-stack-logo" src="./assets/logos/logo-nextjs.png" alt="Next.js" />
         <img class="tech-stack-logo" src="./assets/logos/logo-tailwind.png" alt="Tailwind CSS" />
-        <img class="tech-stack-logo" src="./assets/logos/logo-node.png" alt="Node.js" />
         <img class="tech-stack-logo" src="./assets/logos/logo-mongodb.png" alt="MongoDB" />
       </div>
 
@@ -242,13 +248,13 @@
         <img class="tech-stack-logo" src="./assets/logos/logo-css.png" alt="CSS3" />
         <img class="tech-stack-logo" src="./assets/logos/logo-js.png" alt="JavaScript" />
         <img class="tech-stack-logo" src="./assets/logos/logo-react.png" alt="React" />
-        <img class="tech-stack-logo" src="./assets/logos/logo-nextjs.png" alt="Next.js" />
         <img class="tech-stack-logo" src="./assets/logos/logo-tailwind.png" alt="Tailwind CSS" />
-        <img class="tech-stack-logo" src="./assets/logos/logo-node.png" alt="Node.js" />
         <img class="tech-stack-logo" src="./assets/logos/logo-mongodb.png" alt="MongoDB" />
       </div>
     </div>
   </div>
 </section>
+
+
 
 </div>
