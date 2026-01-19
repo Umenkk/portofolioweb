@@ -163,6 +163,7 @@ function initContact() {
 document.addEventListener('DOMContentLoaded', () => {
   loadComponent('navbar-root', 'components/navbar.html');
   loadComponent('hero-root', 'components/hero.html');
+  loadComponent('techstack-root', 'components/techstack.html');
   loadComponent('about-root', 'components/about.html');
   loadComponent('projects-root', 'components/projects.html');
   loadComponent('skills-root', 'components/skills.html');

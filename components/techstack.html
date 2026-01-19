@@ -1,0 +1,83 @@
+
+<style>
+.tech-stack-container {
+  mask: linear-gradient(
+    90deg,
+    transparent 0%,
+    white 5%,
+    white 95%,
+    transparent 100%
+  );
+}
+
+/* Wrapper bergerak */
+.logos-wrapper {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+/* Grup logo */
+.tech-stack-logos {
+  display: flex;
+  gap: 4rem;
+  padding: 0 4rem;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+/* Animasi tanpa gap */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Logo */
+.tech-stack-logo {
+  height: 36px;
+  object-fit: contain;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+</style>
+<section id="techstack">
+  <div class="py-5 -mt-20 sm:-mt-40 lg:-mt-30">
+  
+    <div class="text-center mb-10 fade-up-strong delay-5">
+      <p class="text-[12px] font-medium tracking-[0.2em] uppercase text-slate-500">
+        <span class="text-[#ff5a3c] mr-2">—</span> 
+        | Tech Stack |
+        <span class="text-[#ff5a3c] ml-2">—</span>
+      </p>
+    </div>
+  </div>
+
+
+  <div class="overflow-hidden tech-stack-container">
+    
+    <div class="logos-wrapper"> 
+      
+      <div class="tech-stack-logos">
+        <img class="tech-stack-logo" src="./assets/logos/logo-html.png" alt="HTML5" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-css.png" alt="CSS3" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-js.png" alt="JavaScript" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-react.png" alt="React" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-tailwind.png" alt="Tailwind CSS" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-mongodb.png" alt="MongoDB" />
+      </div>
+
+      <div class="tech-stack-logos" aria-hidden="true">
+        <img class="tech-stack-logo" src="./assets/logos/logo-html.png" alt="HTML5" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-css.png" alt="CSS3" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-js.png" alt="JavaScript" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-react.png" alt="React" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-tailwind.png" alt="Tailwind CSS" />
+        <img class="tech-stack-logo" src="./assets/logos/logo-mongodb.png" alt="MongoDB" />
+      </div>
+    </div>
+  </div>
+ <section/>
