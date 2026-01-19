@@ -1,195 +1,150 @@
-<style>
-.project-card-shadow-layer {
-  position: absolute;
-  bottom: -40px;
-  right: -40px;
-  width: 50%;
-  height: 50%;
-  border-radius: 12px;
-  background-color: #e5e7eb;
-  transition: all 0.7s;
-  overflow: hidden;
-  border: 2px solid #ff5a3c;
-  padding: 4px;
-  background: white;
-  box-shadow: 0 0 0 1px rgba(255,90,60,0.2);
-}
+<section id="projects" class="space-y-14">
 
-.project-card:hover .project-card-shadow-layer {
-  transform: translate(-16px, -16px);
-}
-
-.project-card-shadow-layer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-
-  #projects .grid {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-
-  .project-card {
-    padding: 12px !important;
-    border-radius: 12px;
-  }
-
-  .project-card h2 {
-    font-size: 1rem !important;
-  }
-
-  .project-card p {
-    font-size: 0.75rem !important;
-  }
-
-  .project-card-shadow-layer {
-    width: 30%;
-    height: 30%;
-    bottom: -12px;
-    right: -12px;
-  }
-}
-</style>
-
-
-
-</style>
-
-
-<section id="projects">
-
-<div class="mb-14 max-w-xl">
-  <p class="text-[12px] font-medium tracking-[0.25em] uppercase text-[#ff5a3c] mb-2">
-    Work
-  </p>
-  <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
-    A selection of projects I have built, showcasing my focus on clean execution, performance, and detail.
-  </h2>
-  <p class="mt-4 text-slate-500 text-[0.95rem]">
-    I'm passionately building these projects to demonstrate my skills!
-  </p>
-</div>
-
-<div class="grid grid-cols-2 gap-6 md:gap-20">
-
-<!-- CARD 1 -->
-<div class="project-card group flex flex-col w-full min-h-[240px] duration-500 relative rounded-lg p-4 bg-gray-100 hover:-translate-y-2 hover:shadow-xl shadow-gray-300">
-
-  <div class="project-card-shadow-layer">
-    <img src="./assets/Project/PengaduanFasil.png">
+  <div class="max-w-xl">
+    <p class="text-[12px] font-medium tracking-[0.25em] uppercase text-[#ff5a3c] mb-2">
+      Work
+    </p>
+    <h2 class="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
+      A selection of projects I have built, showcasing my focus on clean execution, performance, and detail.
+    </h2>
+    <p class="mt-4 text-slate-500 text-[0.95rem]">
+      I'm passionately building these projects to demonstrate my skills!
+    </p>
   </div>
 
-  <div class="flex flex-col h-full">
-    <div class="flex-1">
-      <p class="text-[10px] font-semibold tracking-wider uppercase text-[#ff5a3c] mb-1">
-        Pengaduan Fasilitas Umum Kampus UAD
-      </p>
-      <h2 class="text-xl md:text-2xl font-bold mb-2 text-gray-800">
-        Web App Pengaduan Fasilitas Umum Kampus UAD
-      </h2>
-      <p class="text-gray-700 line-clamp-3 text-xs md:text-sm">
-        A web application for managing public facility complaints at Ahmad Dahlan University.
-      </p>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+      <!-- CARD 1 -->
+      <div class="relative group">
+        <div
+          class="relative z-10 mx-4 h-40 rounded-2xl
+                 bg-gradient-to-r from-[#ff7a5a] to-[#ff5a3c]
+                 shadow-lg flex items-center justify-center
+                 transition-all duration-300
+                 group-hover:-translate-y-2">
+          <div
+            class="bg-white rounded-xl p-3 shadow-sm
+                   transition-all duration-300
+                   group-hover:scale-105">
+            <img src="./assets/Project/PengaduanFasil.png" class="h-20 w-auto object-contain" />
+          </div>
+        </div>
+    
+        <div
+          class="relative -mt-12 rounded-2xl bg-white p-6 pt-16
+                 shadow-md transition-all duration-300
+                 group-hover:shadow-2xl">
+          <p class="text-[11px] font-semibold tracking-wider uppercase text-[#ff5a3c] mb-2">
+            Pengaduan Kampus UAD
+          </p>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2">
+            Web App Pengaduan Fasilitas Umum
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            A web application for managing public facility complaints at Ahmad Dahlan University.
+          </p>
+          <a href="#" class="inline-block mt-5">
+            <span class="inline-flex items-center rounded-lg bg-[#ff5a3c] px-5 py-2 text-xs font-semibold text-white shadow-md hover:bg-[#ff734f] transition">
+              Explore
+            </span>
+          </a>
+        </div>
+      </div>
+    
+      <!-- CARD 2 -->
+      <div class="relative group">
+        <div
+          class="relative z-10 mx-4 h-40 rounded-2xl
+                 bg-gradient-to-r from-slate-400 to-slate-600
+                 shadow-lg flex items-center justify-center
+                 transition-all duration-300
+                 group-hover:-translate-y-2">
+          <div class="bg-white rounded-xl p-3 shadow-sm group-hover:scale-105 transition">
+            <img src="./assets/Project/amansalogo.png" class="h-20 w-auto object-contain" />
+          </div>
+        </div>
+    
+        <div class="relative -mt-12 rounded-2xl bg-white p-6 pt-16 shadow-md group-hover:shadow-2xl transition">
+          <p class="text-[11px] font-semibold tracking-wider uppercase text-[#ff5a3c] mb-2">
+            Amansa Hajj Tours
+          </p>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2">
+            Web Booking Amansa Hajj Tours
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            A web application providing Hajj package information and online booking services.
+          </p>
+          <a href="#" class="inline-block mt-5">
+            <span class="inline-flex items-center rounded-lg bg-[#ff5a3c] px-5 py-2 text-xs font-semibold text-white shadow-md hover:bg-[#ff734f] transition">
+              Explore
+            </span>
+          </a>
+        </div>
+      </div>
+    
+      <!-- CARD 3 -->
+      <div class="relative group">
+        <div
+          class="relative z-10 mx-4 h-40 rounded-2xl
+                 bg-gradient-to-r from-orange-400 to-amber-500
+                 shadow-lg flex items-center justify-center
+                 transition-all duration-300
+                 group-hover:-translate-y-2">
+          <div class="bg-white rounded-xl p-3 shadow-sm group-hover:scale-105 transition">
+            <img src="./assets/Project/chew.png" class="h-20 w-auto object-contain" />
+          </div>
+        </div>
+    
+        <div class="relative -mt-12 rounded-2xl bg-white p-6 pt-16 shadow-md group-hover:shadow-2xl transition">
+          <p class="text-[11px] font-semibold tracking-wider uppercase text-[#ff5a3c] mb-2">
+            Chew App
+          </p>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2">
+            UI Design Chew App
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            Designing a modern and user-friendly interface for a food delivery application.
+          </p>
+          <a href="#" class="inline-block mt-5">
+            <span class="inline-flex items-center rounded-lg bg-[#ff5a3c] px-5 py-2 text-xs font-semibold text-white shadow-md hover:bg-[#ff734f] transition">
+              Explore
+            </span>
+          </a>
+        </div>
+      </div>
+    
+      <!-- CARD 4 (COMING SOON) -->
+      <div class="relative group">
+        <div
+          class="relative z-10 mx-4 h-40 rounded-2xl
+                 bg-gradient-to-r from-slate-300 to-slate-400
+                 shadow-lg flex items-center justify-center
+                 transition-all duration-300
+                 group-hover:-translate-y-2">
+          <div class="bg-white rounded-xl px-4 py-2 shadow-sm group-hover:scale-105 transition">
+            <span class="text-sm font-semibold text-slate-500">COMING SOON</span>
+          </div>
+        </div>
+    
+        <div class="relative -mt-12 rounded-2xl bg-white p-6 pt-16 shadow-md group-hover:shadow-2xl transition">
+          <p class="text-[11px] font-semibold tracking-wider uppercase text-[#ff5a3c] mb-2">
+            Upcoming
+          </p>
+          <h3 class="text-xl font-semibold text-slate-900 mb-2">
+            New Project
+          </h3>
+          <p class="text-slate-500 text-sm leading-relaxed">
+            More exciting projects are currently in development. Stay tuned!
+          </p>
+          <span class="inline-block mt-5 text-xs font-semibold text-slate-400">
+            In Progress
+          </span>
+        </div>
+      </div>
+    
     </div>
+    
 
-    <a href="#" class="mt-4">
-      <button class="hover:bg-[#ff5a3c] hover:text-white bg-gray-200 text-gray-800 rounded p-2 px-6 transition w-full md:w-auto">
-        Explore
-      </button>
-    </a>
   </div>
-</div>
-
-<!-- CARD 2 -->
-<div class="project-card group flex flex-col w-full min-h-[240px] duration-500 relative rounded-lg p-4 bg-gray-100 hover:-translate-y-2 hover:shadow-xl shadow-gray-300">
-
-  <div class="project-card-shadow-layer">
-    <img src="./assets/Project/amansalogo.png">
-  </div>
-
-  <div class="flex flex-col h-full">
-    <div class="flex-1">
-      <p class="text-[10px] font-semibold tracking-wider uppercase text-[#ff5a3c] mb-1">
-        Amansa Hajj Tours And Travel
-      </p>
-      <h2 class="text-xl md:text-2xl font-bold mb-2 text-gray-800">
-        Web Booking Amansa Hajj Tours
-      </h2>
-      <p class="text-gray-700 line-clamp-3 text-xs md:text-sm">
-        A web application providing Hajj package information and online booking services.
-      </p>
-    </div>
-
-    <a href="#" class="mt-4">
-      <button class="hover:bg-[#ff5a3c] hover:text-white bg-gray-200 text-gray-800 rounded p-2 px-6 transition w-full md:w-auto">
-        Explore
-      </button>
-    </a>
-  </div>
-</div>
-
-<!-- CARD 3 -->
-<div class="project-card group flex flex-col w-full min-h-[240px] duration-500 relative rounded-lg p-4 bg-gray-100 hover:-translate-y-2 hover:shadow-xl shadow-gray-300">
-
-  <div class="project-card-shadow-layer">
-    <img src="./assets/Project/chew.png">
-  </div>
-
-  <div class="flex flex-col h-full">
-    <div class="flex-1">
-      <p class="text-[10px] font-semibold tracking-wider uppercase text-[#ff5a3c] mb-1">
-        Chew App
-      </p>
-      <h2 class="text-xl md:text-2xl font-bold mb-2 text-gray-800">
-        UI Design Chew App
-      </h2>
-      <p class="text-gray-700 line-clamp-3 text-xs md:text-sm">
-        Designing a modern and user-friendly interface for a food delivery application.
-      </p>
-    </div>
-
-    <a href="#" class="mt-4">
-      <button class="hover:bg-[#ff5a3c] hover:text-white bg-gray-200 text-gray-800 rounded p-2 px-6 transition w-full md:w-auto">
-        Explore
-      </button>
-    </a>
-  </div>
-</div>
-
-<!-- CARD 4 -->
-<div class="project-card group flex flex-col w-full min-h-[240px] duration-500 relative rounded-lg p-4 bg-gray-100 hover:-translate-y-2 hover:shadow-xl shadow-gray-300">
-
-  <div class="project-card-shadow-layer">
-    <img src="./assets/coming-soon.png">
-  </div>
-
-  <div class="flex flex-col h-full">
-    <div class="flex-1">
-      <p class="text-[10px] font-semibold tracking-wider uppercase text-[#ff5a3c] mb-1">
-        Coming Soon
-      </p>
-      <h2 class="text-xl md:text-2xl font-bold mb-2 text-gray-800">
-        Upcoming Project
-      </h2>
-      <p class="text-gray-700 line-clamp-3 text-xs md:text-sm">
-        More exciting projects are currently in development. Stay tuned!
-      </p>
-    </div>
-
-    <a href="#" class="mt-4">
-      <button class="hover:bg-[#ff5a3c] hover:text-white bg-gray-200 text-gray-800 rounded p-2 px-6 transition w-full md:w-auto">
-        Explore
-      </button>
-    </a>
-  </div>
-</div>
-
-</div>
 
 </section>
-

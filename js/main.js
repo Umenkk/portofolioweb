@@ -176,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadComponent('techstack-root', 'components/techstack.html');
   loadComponent('about-root', 'components/about.html');
   loadComponent('projects-root', 'components/projects.html');
+  loadComponent('certification-root', 'components/certification.html');
   loadComponent('skills-root', 'components/skills.html');
   loadComponent('contact-root', 'components/contact.html');
 });

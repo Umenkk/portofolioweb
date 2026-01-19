@@ -1,50 +1,92 @@
 <style>
-  /* Menggunakan kembali CSS Fade Up */
-  .fade-up-strong {
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeUp 0.9s cubic-bezier(.16,.84,.44,1) forwards;
-  }
-  .delay-1 { animation-delay: 0.25s; }
-  .delay-2 { animation-delay: 0.40s; }
-  .delay-3 { animation-delay: 0.55s; }
-  .delay-4 { animation-delay: 0.70s; }
-  .delay-5 { animation-delay: 0.85s; }
-  .delay-6 { animation-delay: 1.00s; }
-  
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  /* ===== Fade Up (tetap kamu pakai) ===== */
+.fade-up-strong {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.9s cubic-bezier(.16,.84,.44,1) forwards;
+}
+.delay-1 { animation-delay: 0.25s; }
+.delay-2 { animation-delay: 0.40s; }
+.delay-3 { animation-delay: 0.55s; }
+.delay-4 { animation-delay: 0.70s; }
+.delay-5 { animation-delay: 0.85s; }
+.delay-6 { animation-delay: 1.00s; }
 
-  /* Kustom: Styling Kartu Layanan */
-  .service-card {
-    position: relative;
-    border-radius: 1rem; /* rounded-xl */
-    border: 1px solid rgba(229, 231, 235, 0.7); /* border-slate-200 halus */
-    padding: 2.5rem; /* p-10 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  /* Kustom: Efek Hover */
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  }
+/* ===== SERVICE CARD POLISH ===== */
+.service-card {
+  position: relative;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  padding: 2.5rem;
+  background: linear-gradient(180deg, #ffffff, #fafafa);
+  overflow: hidden;
 
-  /* Kustom: Styling Angka Transparan Besar */
-  .service-number {
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    font-size: 5rem; /* Ukuran besar */
-    font-weight: 600; /* semi-bold */
-    line-height: 1;
-    color: rgba(17, 24, 39, 0.08); /* Transparan gelap */
-    z-index: 0;
-  }
+  transition:
+    transform 0.35s cubic-bezier(.16,.84,.44,1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* subtle gradient border on hover */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255,90,60,.35),
+    rgba(255,255,255,.6),
+    rgba(255,90,60,.15)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255,90,60,.4);
+  box-shadow:
+    0 20px 40px -20px rgba(0,0,0,.15),
+    0 10px 20px -12px rgba(0,0,0,.08);
+}
+
+/* Angka besar */
+.service-number {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.5rem;
+  font-size: 5.5rem;
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(17, 24, 39, 0.06);
+  z-index: 0;
+  transition: transform .35s ease, color .35s ease;
+}
+
+.service-card:hover .service-number {
+  transform: translateY(-4px);
+  color: rgba(255, 90, 60, 0.12);
+}
+
 </style>
 
 <section id="skills" class="space-y-12">
