@@ -19,6 +19,21 @@
     width: 100%;
   overflow-x: hidden;
   }
+
+  /* Default: matikan efek 3D */
+/* HANYA untuk device tanpa hover (mobile & tablet touch) */
+@media (hover: none) and (pointer: coarse) {
+  .hover-3d {
+    transform: none !important;
+    perspective: none !important;
+  }
+
+  .hover-3d * {
+    transform: none !important;
+  }
+}
+
+
 </style>
 
   <!-- Tailwind CDN -->

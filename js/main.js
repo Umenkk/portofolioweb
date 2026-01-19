@@ -85,6 +85,8 @@ function initNavbar() {
       }, 250);
     }, 2600);
   }
+
+  
 }
 
 
