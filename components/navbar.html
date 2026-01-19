@@ -1,94 +1,117 @@
-<!-- components/navbar.html -->
-
 <header
-  class="fixed top-0 left-0 right-0 w-full z-50 bg-[#e5e5e5]/95 backdrop-blur border-b border-slate-300">
-  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 py-4 relative">
-    <div class="flex items-center justify-between gap-4">
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-[100000] bg-[#e5e5e5]/95 backdrop-blur border-b border-slate-300">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 h-16 flex items-center justify-between">
 
-      <!-- Brand kiri -->
-      <div class="flex items-center">
-        <div>
-          <p class="text-sm font-semibold text-slate-900">Muhammad Irfan</p>
-
-          <!-- Animated role -->
-          <div class="mt-0.5 h-4 overflow-hidden">
-            <span
-              id="nav-role-text"
-              class="block text-[11px] text-slate-500 leading-tight transform transition-all duration-300 ease-out">
-              Web Developer
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Kanan -->
-      <div class="flex items-center gap-3">
-
-        <!-- Menu desktop -->
-        <nav class="hidden md:block">
-          <div
-            class="inline-flex items-center bg-white rounded-full border border-slate-200 px-1 py-1 shadow-[0_0_0_1px_rgba(255,255,255,0.5)]">
-            <a href="#hero"
-               class="px-4 py-1.5 text-xs sm:text-sm font-medium rounded-full bg-slate-900 text-white">
-              Home
-            </a>
-            <a href="#about"
-               class="px-4 py-1.5 text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-full">
-              About
-            </a>
-            <a href="#projects"
-               class="px-4 py-1.5 text-xs sm:text-sm font-medium text-slate-600 hover:bg-slate-100 rounded-full">
-              Work
-            </a>
-          </div>
-        </nav>
-
-        <!-- Let's chat -->
-        <a
-          href="#contact"
-          class="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs sm:text-sm font-medium text-[#ff5a3c] hover:bg-[#ff5a3c] hover:text-white transition">
-          Let&apos;s chat
-        </a>
-
-        <!-- Hamburger -->
-        <button
-          id="nav-toggle"
-          class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-300 bg-white hover:bg-slate-100 transition"
-          aria-label="Toggle navigation">
-          <svg id="nav-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
-                  d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="nav-icon-close" xmlns="http://www.w3.org/2000/svg"
-               class="h-4 w-4 hidden" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
-                  d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+    <!-- Brand -->
+    <div>
+      <p class="text-sm font-semibold text-slate-900">Muhammad Irfan</p>
+      <div class="mt-0.5 h-4 overflow-hidden">
+        <span
+          id="nav-role-text"
+          class="block text-[11px] text-slate-500 leading-tight transform transition-all duration-300 ease-out">
+          Web Developer
+        </span>
       </div>
     </div>
 
-    <!-- Mobile menu (absolute, tidak menambah tinggi halaman) -->
-    <div
-      id="nav-mobile-menu"
-      class="md:hidden hidden absolute left-0 right-0 top-full mt-2 px-6 sm:px-10 lg:px-16 xl:px-24">
-      <nav
-        class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-        <a href="#hero"
-           class="block px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-100">
-          Home
-        </a>
-        <a href="#about"
-           class="block px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">
-          About
-        </a>
-        <a href="#projects"
-           class="block px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">
-          Work
-        </a>
-      </nav>
+    <!-- Desktop menu -->
+    <nav class="hidden md:flex items-center gap-1 bg-white border border-slate-200 rounded-full p-1">
+      <a href="#hero" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Work</a>
+    </nav>
+
+    <!-- Right -->
+    <div class="flex items-center gap-2">
+      <!-- Contact (always visible) -->
+      <a
+        href="#contact"
+        class="hidden sm:inline-flex items-center rounded-full border border-slate-200 bg-white
+               px-4 py-1.5 text-xs font-medium text-[#ff5a3c]
+               hover:bg-[#ff5a3c] hover:text-white transition">
+        Contact me
+      </a>
+
+      <!-- Burger -->
+      <button
+        id="burger"
+        class="md:hidden w-10 h-10 rounded-full border border-slate-300 bg-white
+               grid place-items-center relative overflow-hidden">
+        <span class="burger-line top"></span>
+        <span class="burger-line mid"></span>
+        <span class="burger-line bot"></span>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- Overlay -->
+<div
+  id="nav-overlay"
+  class="fixed inset-0 z-[99999] bg-black/30 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+</div>
+
+<!-- Mobile Sheet -->
+<div
+  id="nav-mobile"
+  class="fixed top-16 left-0 right-0 z-[100000] md:hidden
+         translate-y-[-12px] opacity-0 pointer-events-none
+         transition-all duration-300 ease-out">
+  <div class="mx-4 rounded-2xl bg-white shadow-xl overflow-hidden">
+
+    <div class="px-5 py-4 border-b">
+      <p class="font-semibold text-slate-900">Muhammad Irfan</p>
+      <p class="text-xs text-slate-500">IT Analyst</p>
+    </div>
+
+    <a href="#hero" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#projects" class="mobile-link">Work</a>
+
+    <div class="p-4 border-t">
+      <a
+        href="#contact"
+        class="block w-full text-center rounded-xl bg-[#ff5a3c] py-3 text-sm font-semibold text-white
+               hover:bg-[#ff734f] transition">
+        Contact me
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+.nav-link {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  color: #64748b;
+}
+.nav-link.active {
+  background: #0f172a;
+  color: white;
+}
+
+.mobile-link {
+  display: block;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.burger-line {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+.burger-line.top { transform: translateY(-5px); }
+.burger-line.bot { transform: translateY(5px); }
+
+.burger-open .top { transform: rotate(45deg); }
+.burger-open .mid { opacity: 0; }
+.burger-open .bot { transform: rotate(-45deg); }
+</style>

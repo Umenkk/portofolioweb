@@ -25,63 +25,71 @@ async function loadComponent(rootId, url) {
 }
 
 function initNavbar() {
-  // Toggle mobile menu
-  const btn = document.getElementById('nav-toggle');
-  const menu = document.getElementById('nav-mobile-menu');
-  const iconOpen = document.getElementById('nav-icon-open');
-  const iconClose = document.getElementById('nav-icon-close');
+  const burger = document.getElementById('burger');
+  const mobile = document.getElementById('nav-mobile');
+  const overlay = document.getElementById('nav-overlay');
+  const links = document.querySelectorAll('.nav-link, .mobile-link');
 
-  if (btn && menu && iconOpen && iconClose) {
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      iconOpen.classList.toggle('hidden');
-      iconClose.classList.toggle('hidden');
-    });
+  let open = false;
 
-    menu.querySelectorAll('a[href^="#"]').forEach((link) => {
-      link.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        iconOpen.classList.remove('hidden');
-        iconClose.classList.add('hidden');
-      });
-    });
+  function setOpen(state) {
+    open = state;
+
+    if (open) {
+      mobile.classList.remove('opacity-0', 'translate-y-[-12px]', 'pointer-events-none');
+      mobile.classList.add('opacity-100', 'translate-y-0');
+
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      overlay.classList.add('opacity-100');
+
+      burger.classList.add('burger-open');
+    } else {
+      mobile.classList.add('opacity-0', 'translate-y-[-12px]', 'pointer-events-none');
+      mobile.classList.remove('opacity-100', 'translate-y-0');
+
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      overlay.classList.remove('opacity-100');
+
+      burger.classList.remove('burger-open');
+    }
   }
 
-  // Animasi role yang smooth di navbar
+  burger.addEventListener('click', () => setOpen(!open));
+  overlay.addEventListener('click', () => setOpen(false));
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      setOpen(false);
+    });
+  });
+
+  // Rolling role animation
   const roleEl = document.getElementById('nav-role-text');
   if (roleEl) {
-    const roles = [
-      'Web Developer',
-      'Problem Solver',
-      'IT Analyst',
-      'Tech Enthusiast',
-    ];
+    const roles = ['Web Developer', 'Problem Solver', 'IT Analyst', 'Tech Enthusiast'];
     let index = 0;
 
     setInterval(() => {
-      // Animasi keluar: naik & hilang
       roleEl.classList.add('-translate-y-2', 'opacity-0');
 
       setTimeout(() => {
-        // Ganti teks
         index = (index + 1) % roles.length;
         roleEl.textContent = roles[index];
 
-        // Posisi awal teks baru: sedikit di bawah & transparan
         roleEl.classList.remove('-translate-y-2');
-        roleEl.classList.add('translate-y-2');
-        roleEl.classList.add('opacity-0');
-
-        // Trigger reflow biar transition jalan
+        roleEl.classList.add('translate-y-2', 'opacity-0');
         void roleEl.offsetWidth;
-
-        // Animasi masuk: naik ke posisi & muncul
-        roleEl.classList.remove('translate-y-2');
-        roleEl.classList.remove('opacity-0');
-      }, 250); // harus selaras dengan duration-300 (0.3s)
-    }, 2600); // jeda antar teks (2.6s)
+        roleEl.classList.remove('translate-y-2', 'opacity-0');
+      }, 250);
+    }, 2600);
   }
 }
+
+
+
+
 
 // ===== HERO TYPING EFFECT =====
 function initHero() {
