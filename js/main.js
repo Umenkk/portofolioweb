@@ -68,7 +68,7 @@ function initNavbar() {
   // Rolling role animation
   const roleEl = document.getElementById('nav-role-text');
   if (roleEl) {
-    const roles = ['Web Developer', 'Problem Solver', 'IT Analyst', 'Tech Enthusiast'];
+    const roles = ['Web Developer','UI/UX Developer','Tech Enthusiast','Cat Lover'];
     let index = 0;
 
     setInterval(() => {

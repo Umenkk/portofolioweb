@@ -1,18 +1,29 @@
 <style>
-/* ===== CONTACT SECTION POLISH ===== */
+/* ===== CONTACT SECTION POLISH (ENHANCED) ===== */
 
 .contact-card {
   position: relative;
-  background: linear-gradient(180deg, #1a1a1a, #161616);
+  background: linear-gradient(180deg, #1b1b1b, #141414);
   color: #f3f4f6;
-  border-radius: 1.25rem;
+  border-radius: 1.5rem;
   box-shadow:
-    0 30px 60px -20px rgba(0,0,0,.45),
-    inset 0 1px 0 rgba(255,255,255,.04);
+    0 40px 80px -30px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.05);
   overflow: hidden;
 }
 
-/* subtle border glow */
+/* ambient glow */
+.contact-card::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background:
+    radial-gradient(circle at top left, rgba(255,90,60,.18), transparent 40%);
+  opacity: .35;
+  pointer-events: none;
+}
+
+/* subtle border */
 .contact-card::before {
   content: "";
   position: absolute;
@@ -21,7 +32,7 @@
   border-radius: inherit;
   background: linear-gradient(
     140deg,
-    rgba(255,90,60,.35),
+    rgba(255,90,60,.45),
     rgba(255,255,255,.05),
     rgba(255,90,60,.15)
   );
@@ -33,17 +44,25 @@
   pointer-events: none;
 }
 
+/* Inputs */
 .contact-input,
 .contact-textarea,
 .contact-select {
   width: 100%;
-  background: #242424;
-  border: 1px solid #3f3f3f;
+  background: linear-gradient(180deg, #242424, #1f1f1f);
+  border: 1px solid #3a3a3a;
   color: #f3f4f6;
-  border-radius: 0.5rem;
-  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
   font-size: 0.95rem;
-  transition: border-color .2s, box-shadow .2s, background-color .2s;
+  transition:
+    border-color .25s ease,
+    box-shadow .25s ease,
+    background .25s ease,
+    transform .25s ease;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 0 0 rgba(0,0,0,0);
 }
 
 .contact-input:focus,
@@ -51,26 +70,29 @@
 .contact-select:focus {
   outline: none;
   border-color: #ff5a3c;
-  background: #262626;
-  box-shadow: 0 0 0 3px rgba(255,90,60,.18);
+  background: linear-gradient(180deg, #262626, #202020);
+  box-shadow:
+    0 0 0 3px rgba(255,90,60,.18),
+    0 8px 20px -10px rgba(255,90,60,.35);
+  transform: translateY(-1px);
 }
 
 .contact-input::placeholder,
 .contact-textarea::placeholder {
-  color: #a3a3a3;
+  color: #9ca3af;
 }
 
 /* Checkbox */
 .contact-checkbox {
   width: 16px;
   height: 16px;
-  background-color: #262626;
+  background: #242424;
   border: 1px solid #4a4a4a;
   border-radius: 4px;
   appearance: none;
   cursor: pointer;
   position: relative;
-  transition: background-color .2s, border-color .2s, box-shadow .2s;
+  transition: all .2s ease;
 }
 .contact-checkbox:checked {
   background-color: #ff5a3c;
@@ -150,13 +172,16 @@
       </div>
 
       <button type="submit"
-      class="inline-flex items-center rounded-xl bg-[#ff5a3c]
-             px-7 py-3 text-sm font-semibold text-white
-             shadow-lg shadow-[#ff5a3c]/30
-             hover:bg-[#ff734f] hover:scale-[1.02]
-             active:scale-[0.98] transition">
-      Send
-    </button>
+  class="inline-flex items-center rounded-xl
+         bg-gradient-to-br from-[#ff5a3c] to-[#ff784f]
+         px-8 py-3 text-sm font-semibold text-white
+         shadow-xl shadow-[#ff5a3c]/30
+         hover:shadow-[#ff5a3c]/50 hover:scale-[1.03]
+         active:scale-[0.97]
+         transition">
+  Send
+</button>
+
     
     </form>
   </div>
