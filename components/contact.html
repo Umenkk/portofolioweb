@@ -108,6 +108,87 @@
   color: white;
 }
 
+/* ===== ENHANCED SELECT (BUDGET / SERVICES) ===== */
+.contact-select {
+  appearance: none;
+  background:
+    linear-gradient(180deg, #242424, #1f1f1f),
+    radial-gradient(circle at right center, rgba(255,90,60,.25), transparent 40%);
+  background-repeat: no-repeat;
+  background-position: right 1rem center, center;
+  background-size: 10px 10px, auto;
+  border-radius: 0.9rem;
+  padding-right: 2.8rem;
+  position: relative;
+}
+
+/* custom arrow */
+.contact-select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, #9ca3af 50%),
+    linear-gradient(135deg, #9ca3af 50%, transparent 50%),
+    linear-gradient(180deg, #242424, #1f1f1f);
+  background-position:
+    calc(100% - 18px) 50%,
+    calc(100% - 12px) 50%,
+    0 0;
+  background-size:
+    6px 6px,
+    6px 6px,
+    100% 100%;
+  background-repeat: no-repeat;
+}
+
+.contact-select:hover {
+  border-color: rgba(255,90,60,.6);
+  background:
+    linear-gradient(180deg, #262626, #202020);
+}
+
+/* ===== SEND BUTTON – WARM & NATURAL ===== */
+.contact-submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff5a3c, #ff7a55);
+  color: white;
+  font-weight: 600;
+  letter-spacing: .01em;
+  box-shadow:
+    0 14px 30px -12px rgba(255,90,60,.65),
+    inset 0 1px 0 rgba(255,255,255,.25);
+  transition: all .25s cubic-bezier(.16,.84,.44,1);
+}
+
+.contact-submit::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(255,90,60,.35), transparent 60%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+
+.contact-submit:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 20px 40px -14px rgba(255,90,60,.75),
+    inset 0 1px 0 rgba(255,255,255,.3);
+}
+
+.contact-submit:hover::after {
+  opacity: 1;
+}
+
+.contact-submit:active {
+  transform: translateY(1px) scale(.98);
+}
+
 </style>
 
 <section id="contact" class="flex flex-col lg:flex-row gap-12 lg:gap-20">
@@ -171,16 +252,10 @@
         </label>
       </div>
 
-      <button type="submit"
-  class="inline-flex items-center rounded-xl
-         bg-gradient-to-br from-[#ff5a3c] to-[#ff784f]
-         px-8 py-3 text-sm font-semibold text-white
-         shadow-xl shadow-[#ff5a3c]/30
-         hover:shadow-[#ff5a3c]/50 hover:scale-[1.03]
-         active:scale-[0.97]
-         transition">
-  Send
-</button>
+      <button type="submit" class="contact-submit">
+        Send
+      </button>
+      
 
     
     </form>
